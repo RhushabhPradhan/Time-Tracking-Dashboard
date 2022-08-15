@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+:root {
+  /* primary */
+  --blue: #5847eb;
+  --Lightred: #ff8c66;
+  --Softblue: #56c2e6;
+  --Lightred: #ff5c7c;
+  --Limegreen: #4acf81;
+  --Violet: #7536d3;
+  --Softorange: #f1c65b;
+
+  /* neutral */
+  --Verydarkblue: #0f1424;
+  --Darkblue: #1c1f4a;
+  --Desaturatedblue: #6f76c8;
+  --PaleBlue: #bdc1ff;
+
+  --fs-reg: 18px;
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-med: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+.wrapper {
+  background: var(--Verydarkblue);
+}
+.container {
+  display: grid;
+  justify-content: center;
+  padding: 8em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+.card-profile {
+  height: 250px;
+  border-radius: 1em;
+  grid-row: 1 / span 2;
+  background: var(--Darkblue);
+  height: auto;
+}
+.card-report {
+  height: 250px;
+  border-radius: 1em;
+}
+
+#work {
+  background: var(--Lightred);
+}
+#play {
+  background: var(--Softblue);
+}
+#study {
+  background: var(--Lightred);
+}
+#exercise {
+  background: var(--Limegreen);
+}
+#social {
+  background: var(--Violet);
+}
+#selfcare {
+  background: var(--Softorange);
+}
+
+.test {
+  position: absolute;
+  filter: opacity(100%);
+}
