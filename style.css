@@ -4,7 +4,7 @@
   --blue: #5847eb;
   --Lightred: #ff8c66;
   --Softblue: #56c2e6;
-  --Lightred: #ff5c7c;
+  --Lightred1: #ff5c7c;
   --Limegreen: #4acf81;
   --Violet: #7536d3;
   --Softorange: #f1c65b;
@@ -31,24 +31,31 @@ body {
   font-family: "Rubik", sans-serif;
 }
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--Verydarkblue);
+  /* width: 1440px;
+  height: 1024px; */
 }
 .container {
   display: grid;
   justify-content: center;
-  padding: 8em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 10.5em;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 2em;
 }
 .card-profile {
-  height: 250px;
+  height: 240px;
   border-radius: 1em;
   grid-row: 1 / span 2;
   background: var(--Darkblue);
   height: auto;
 }
 .card-report {
-  height: 250px;
+  position: relative;
+  overflow: hidden;
+  height: 240px;
   border-radius: 1em;
 }
 
@@ -59,7 +66,7 @@ body {
   background: var(--Softblue);
 }
 #study {
-  background: var(--Lightred);
+  background: var(--Lightred1);
 }
 #exercise {
   background: var(--Limegreen);
@@ -71,7 +78,240 @@ body {
   background: var(--Softorange);
 }
 
-.test {
+.profile-desc {
+  height: 69%;
+  padding-left: 2em;
+  background: var(--blue);
+  border-radius: 1em;
+}
+.pfp {
+  height: 80px;
+  margin-top: 2em;
+  border: 4px solid white;
+  border-radius: 50%;
+}
+.report-for {
+  margin-top: 2.5em;
+  color: var(--PaleBlue);
+}
+.name {
+  margin: 0;
+  padding-right: 1em;
+  font-size: 40px;
+  font-weight: var(--fw-light);
+  color: white;
+}
+.title-dots {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  color: white;
+}
+.report-title {
+  font-weight: var(--fw-med);
+  margin: 0;
+  padding: 0;
+}
+.last-week {
+  padding-left: 2em;
+  color: var(--PaleBlue);
+}
+.hours {
+  letter-spacing: -3px;
+  font-weight: var(--fw-light);
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5em;
+  color: white;
+  /* border: 2px solid red; */
+}
+.work-img {
   position: absolute;
-  filter: opacity(100%);
+  right: 1em;
+  top: -0.5em;
+}
+
+.slide-in {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 81%;
+  background: var(--Darkblue);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.track-period {
+  padding-left: 2em;
+  height: 31%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  font-size: var(--fs-reg);
+}
+.track-months {
+  text-decoration: none;
+  color: var(--Desaturatedblue);
+}
+
+/* active states */
+.slide-in:hover {
+  cursor: pointer;
+  background: #424683;
+}
+.track-months:hover {
+  color: white;
+}
+.elipses:hover {
+  filter: contrast(100);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 520px) {
+  .card-profile {
+    grid-column: 1 / 2;
+  }
+  .card-report {
+    grid-column: 1 / 2;
+  }
+  .container {
+    padding: 6em 2em;
+  }
+  .profile-desc {
+    margin: 0;
+    padding: 1.5em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    height: auto;
+  }
+  .report-for {
+    font-size: 13px;
+    margin: 0;
+  }
+  .report-name {
+    margin: 0;
+    padding: 0;
+  }
+  .pfp {
+    margin: 0;
+    height: 50px;
+    width: auto;
+  }
+  .name {
+    font-size: 16px;
+    font-weight: var(--fw-med);
+  }
+  .track-period {
+    height: auto;
+    flex-direction: row;
+    padding: 1em 1em;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .track-months {
+    font-size: 15px;
+  }
+  .card-report {
+    height: 150px;
+  }
+  .slide-in {
+    height: auto;
+  }
+  .title-dots {
+    padding: 1em;
+  }
+  .hours-weeks {
+    padding: 0 1em 1em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hours {
+    padding: 0;
+    font-size: 30px;
+    letter-spacing: normal;
+  }
+  .last-week {
+    font-size: 12px;
+  }
+}
+
+/* Media Queries for Tablets */
+@media only screen and (min-width: 520px) and (max-width: 850px) {
+  .card-profile {
+    grid-column: 1 / span 2;
+  }
+  .card-report {
+    grid-column: 1 / 2;
+  }
+  .card-report:nth-child(odd) {
+    grid-column: 2/3;
+  }
+
+  .container {
+    /* display: flex; */
+    flex-direction: column;
+    padding: 6em 2em;
+  }
+  .profile-desc {
+    margin: 0;
+    padding: 1.5em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    height: auto;
+  }
+  .report-for {
+    font-size: 16px;
+    margin: 0;
+  }
+  .report-name {
+    margin: 0;
+    padding: 0;
+  }
+  .pfp {
+    margin: 0;
+    height: 100px;
+    width: auto;
+  }
+  .track-period {
+    height: auto;
+    flex-direction: row;
+    padding: 1em 1em;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .track-months {
+    font-size: 15px;
+  }
+  .card-report {
+    height: 150px;
+  }
+  .slide-in {
+    height: auto;
+  }
+  .title-dots {
+    padding: 1em;
+  }
+  .hours-weeks {
+    padding: 0 1em 1em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hours {
+    padding: 0;
+    font-size: 30px;
+    letter-spacing: normal;
+  }
+  .last-week {
+    font-size: 12px;
+  }
 }
